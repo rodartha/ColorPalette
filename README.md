@@ -47,6 +47,8 @@ Yes, I hope to make one soon.
 This varies wildly based on the size of the image but anywhere from 1 second to a minute
 ## What file types does it support?
 Currently this only works for .jpg and .png images but I hope to expand this in the future
+## When I look at this picture one color really stands out to my eye but the script didn't pick it up, why?
+The human eye is designed to detect harsh contrast and abrupt changes so when there is a small amount of a color we can find it very overpowering. This script is designed to handle "dominant" colors and therefore may not pick up these small yet bright/contrasting colors your eye does. this being said, often it will pick these up if you just increase the number of colors its looking for by a couple.
 
 # Notes:
 In the future I hope to add real time analysis so that it can display colors as you watch a movie.

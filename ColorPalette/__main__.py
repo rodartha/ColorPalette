@@ -1,3 +1,9 @@
+"""
+Colorpalette python package.
+
+Colin Page <cwpage@umich.edu>
+Copyright 2019.
+"""
 import os
 from PIL import Image, ImageFont, ImageDraw
 import matplotlib.pyplot as plt

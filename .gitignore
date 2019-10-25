@@ -9,6 +9,3 @@ var/
 
 # vim files
 **/*.sw*
-
-# Ignore test images
-*.jpg

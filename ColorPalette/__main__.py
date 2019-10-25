@@ -5,6 +5,7 @@ from scipy import cluster
 import pandas as pd
 import math
 import colorsys
+import click
 
 def get_color_pallete(input_file, output_file, num_colors, display_color=False):
 	img = plt.imread(input_file)
@@ -106,9 +107,12 @@ def append_color_pallete(original_image, color_pallete, output_file):
 	pallete_width, pallete_height = pallete_img.size
 
 	height_offset = math.ceil(og_height / 20)
+	if og_height > og_width:
+		height_offset = math.ceil(og_height / 30)
 
 	total_width = og_width
 	total_height = og_height + pallete_height + (height_offset * 2)
+
 
 	combined_img = Image.new('RGB', (total_width, total_height), (255, 255, 255))
 
@@ -130,8 +134,8 @@ def create_pallete(filename, num_colors, display_color=False):
 	if file_split[1] != 'jpg' and file_split[1] != 'png':
 		raise("The file must be a jpg or png")
 
-	output_palette = file_prefix + file_split[0] + '_pallete.' + file_split[1]
-	output_combined = file_prefix + file_split[0] + '_with_pallete.' + file_split[1]
+	output_palette = file_prefix + file_split[0] + '_palette.' + file_split[1]
+	output_combined = file_prefix + file_split[0] + '_with_palette.' + file_split[1]
 	get_color_pallete(filename, output_palette, num_colors, display_color)
 	append_color_pallete(filename, output_palette, output_combined)
 
@@ -165,4 +169,16 @@ def get_text_height(font, text):
 		height.append(font.getsize(ch)[1])
 	return max(height)
 
-create_pallete('../blade.jpg', 6, True)
+@click.command()
+@click.argument('image_file')
+@click.argument('num_colors')
+@click.option('--text', '-t', default=False, is_flag=True, help='')
+def main(image_file, num_colors, text):
+	try:
+		create_pallete(image_file, int(num_colors), text)
+	except Exception as e:
+		print(e)
+
+if __name__ == '__main__':
+    # pylint: disable=no-value-for-parameter
+    main()

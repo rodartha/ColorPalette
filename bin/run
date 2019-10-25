@@ -1,0 +1,21 @@
+#!/bin/bash
+# Colorpalette
+
+set -e
+
+usage() {
+	echo "Usage $0 (IMAGE_FILENAME) (NUM_COLORS) (0|1 if you want hexadecimal colors printed)"
+}
+
+if [[ $# -ne 2 && $# -ne 3 ]]; then
+	usage
+	exit 1
+fi
+
+if [ $# -eq 2 ]; then
+	colorpalette $1 $2
+fi
+
+if [[ $# -eq 3 && $3 -eq 1 ]]; then
+	colorpalette $1 $2 --text
+fi

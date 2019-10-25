@@ -6,7 +6,7 @@ Find the dominant colors in any image
 Make sure you have python installed on your machine
 
 ## Step 2)
-navigate into the main directory ColorPallete and create a python virtual environment as follows:
+navigate into the main directory ColorPalette and create a python virtual environment as follows:
 ```
 python3 -m venv env
 ```
@@ -24,7 +24,7 @@ pip install -e .
 ```
 
 # Using the tool:
-To use this tool place whatever image you want to analyze in the main ColorPallete folder and type the following:
+To use this tool place whatever image you want to analyze in the main ColorPalette folder and type the following:
 ```
 ./bin/run EXAMPLE_IMAGE.jpg NUM_COLORS
 ```

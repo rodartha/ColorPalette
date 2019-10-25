@@ -38,7 +38,7 @@ The tool will output two files into the main folder your image was initially in.
 ![alt text](https://github.com/rodartha/ColorPalette/blob/master/Example/fox_with_palette.jpg)
 
 ## Image with color names
-![alt text](https://github.com/rodartha/ColorPalette/blob/master/Example/Sfox_with_pallete_text.jpg)
+![alt text](https://github.com/rodartha/ColorPalette/blob/master/Example/fox_with_pallete_text.jpg)
 
 # FAQ:
 ## Will there be a batch edit feature?

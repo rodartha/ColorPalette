@@ -14,7 +14,7 @@ setup(
     install_requires=[
         'Pillow==6.2.1',
         'matplotlib==3.0.3',
-        'scipy==1.3.1',
+        'scipy==1.10.0',
         'pandas==0.24.2',
         'click==6.7'
     ],
